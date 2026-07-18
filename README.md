@@ -6,10 +6,10 @@ Descarga de un día/mes de variables oceánicas desde el **Climate Data Store (C
 
 | Límite | Valor     |
 |--------|-----------|
-| Norte  | 11.32° N  |
-| Sur    | 11.00° N  |
-| Este   | -74.20° W |
-| Oeste  | -74.83° W |
+| Norte  | 11.60° N  |
+| Sur    | 10.70° N  |
+| Este   | -73.90° W |
+| Oeste  | -75.40° W |
 
 ## Fecha
 

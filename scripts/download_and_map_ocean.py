@@ -28,9 +28,9 @@ import requests
 import xarray as xr
 from matplotlib.colors import LogNorm
 
-# Bbox solicitado (cerca de Santa Marta)
-LAT_S, LAT_N = 11.00, 11.32
-LON_W, LON_E = -74.83, -74.20
+# Bbox intermedio alrededor de Santa Marta
+LAT_S, LAT_N = 10.70, 11.60
+LON_W, LON_E = -75.40, -73.90
 DATE = "2023-07-20"
 YEAR, MONTH, DAY = DATE.split("-")
 
