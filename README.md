@@ -11,17 +11,28 @@ Descarga de un día/mes de variables oceánicas desde el **Climate Data Store (C
 | Este   | -73.90° W |
 | Oeste  | -75.40° W |
 
-## Fecha
+## Promedios mensuales 2025 (SST + clorofila)
 
-**2023-07-20** (SST y clorofila diarias; salinidad ORAS5 = media de julio 2023)
+Se descargan **todos los días de 2025** desde CDS, se conservan los recortes diarios del bbox y luego se calcula el **promedio mensual** (no se usan productos mensuales de CDS).
 
-## Datasets CDS
+```bash
+python3 scripts/daily_to_monthly_sst_chl_2025.py
+```
+
+| Variable | Dataset CDS diario | Salida |
+|----------|--------------------|--------|
+| SST | `satellite-sea-surface-temperature` L4 v3.0 | `data/daily_2025/sst_YYYY-MM-DD.nc` |
+| Clorofila-a | `satellite-ocean-colour` `chlor_a` v6.0 | `data/daily_2025/chl_YYYY-MM-DD.nc` |
+| Promedios | media aritmética de días disponibles | `data/monthly_from_daily_2025/` |
+| Mapas | solo SST y clorofila | `figures/monthly_2025/` |
+
+## Prueba de un día (2023-07-20)
 
 | Variable | Dataset CDS | Tipo |
 |----------|-------------|------|
 | SST | `satellite-sea-surface-temperature` (L4 combined, v3.0) | Satélite |
 | Clorofila-a | `satellite-ocean-colour` (`chlor_a`, v6.0, 4 km) | Ocean Colour satélite |
-| Salinidad | `reanalysis-oras5` (`sea_surface_salinity`, operacional) | Reanálisis mensual (CDS no ofrece SSS satélite diaria) |
+| Salinidad | `reanalysis-oras5` (`sea_surface_salinity`, operacional) | Reanálisis mensual |
 
 ## Autenticación (no va en el repo)
 
