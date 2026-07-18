@@ -313,24 +313,20 @@ def plot_monthly_grid(stack_path: Path, kind: str) -> None:
 
     n = da.sizes["time"]
     ncols, nrows = 4, int(np.ceil(n / 4))
-    fig = plt.figure(figsize=(13.8, 3.15 * nrows))
-    # Última columna reservada para la colorbar
-    gs = fig.add_gridspec(
+    fig, axes = plt.subplots(
         nrows,
-        ncols + 1,
-        width_ratios=[1, 1, 1, 1, 0.06],
-        wspace=0.12,
-        hspace=0.28,
-        left=0.04,
-        right=0.94,
-        top=0.88,
-        bottom=0.06,
+        ncols,
+        figsize=(12.8, 3.35 * nrows + 0.8),
+        subplot_kw={"projection": ccrs.PlateCarree()},
     )
+    axes = np.atleast_2d(axes)
+    # Colorbar horizontal abajo: nunca tapa los mapas
+    fig.subplots_adjust(left=0.04, right=0.98, top=0.90, bottom=0.12, wspace=0.10, hspace=0.28)
 
     mesh = None
     for i in range(nrows * ncols):
         r, c = divmod(i, ncols)
-        ax = fig.add_subplot(gs[r, c], projection=ccrs.PlateCarree())
+        ax = axes[r, c]
         if i >= n:
             ax.set_visible(False)
             continue
@@ -355,16 +351,18 @@ def plot_monthly_grid(stack_path: Path, kind: str) -> None:
     fig.suptitle(
         f"{title}\nBbox: {LAT_S:.2f}–{LAT_N:.2f}°N, {LON_W:.2f}–{LON_E:.2f}°W",
         fontsize=12,
+        y=0.98,
     )
     if mesh is not None:
-        cax = fig.add_subplot(gs[:, -1])
-        cbar = fig.colorbar(mesh, cax=cax)
-        cbar.set_label(units)
+        cax = fig.add_axes([0.18, 0.04, 0.64, 0.03])  # barra horizontal bajo los mapas
+        cbar = fig.colorbar(mesh, cax=cax, orientation="horizontal")
+        cbar.set_label(units, fontsize=10)
 
     FIGS.mkdir(parents=True, exist_ok=True)
     ARTIFACTS.mkdir(parents=True, exist_ok=True)
     for dest in (FIGS / f"{kind}_monthly_{YEAR}.png", ARTIFACTS / f"{kind}_monthly_{YEAR}.png"):
-        fig.savefig(dest, dpi=150, bbox_inches="tight")
+        # sin bbox_inches='tight' para no compactar y solapar la colorbar
+        fig.savefig(dest, dpi=150)
         print(f"Mapa: {dest}")
     plt.close(fig)
 
