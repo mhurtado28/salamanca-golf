@@ -28,9 +28,9 @@ import requests
 import xarray as xr
 from matplotlib.colors import LogNorm
 
-# Bbox ampliado (Caribe colombiano)
-LAT_S, LAT_N = 10.0, 12.5
-LON_W, LON_E = -76.5, -73.0
+# Bbox solicitado (cerca de Santa Marta)
+LAT_S, LAT_N = 11.00, 11.32
+LON_W, LON_E = -74.83, -74.20
 DATE = "2023-07-20"
 YEAR, MONTH, DAY = DATE.split("-")
 
@@ -145,6 +145,16 @@ def subset_latlon(ds: xr.Dataset, lat_name: str, lon_name: str) -> xr.Dataset:
     return ds.isel(y=slice(ys.min(), ys.max() + 1), x=slice(xs.min(), xs.max() + 1))
 
 
+def _retrieve_or_reuse(client: cdsapi.Client, dataset: str, request: dict, zip_path: Path) -> Path:
+    """Reutiliza zip local si ya existe (útil al solo cambiar el bbox)."""
+    if zip_path.exists() and zip_path.stat().st_size > 1000:
+        print(f"Reutilizando cache local: {zip_path.name}")
+        return zip_path
+    print(f"CDS -> {dataset}")
+    client.retrieve(dataset, request, str(zip_path))
+    return zip_path
+
+
 def download_cds() -> dict:
     DATA.mkdir(parents=True, exist_ok=True)
     TMP.mkdir(parents=True, exist_ok=True)
@@ -159,9 +169,8 @@ def download_cds() -> dict:
     )
 
     # 1) SST satélite L4 (global diario → subset local)
-    sst_zip = TMP / "sst_cds.zip"
-    print("CDS -> satellite-sea-surface-temperature")
-    client.retrieve(
+    sst_zip = _retrieve_or_reuse(
+        client,
         "satellite-sea-surface-temperature",
         {
             "variable": "all",
@@ -173,7 +182,7 @@ def download_cds() -> dict:
             "month": [MONTH],
             "day": [DAY],
         },
-        str(sst_zip),
+        TMP / "sst_cds.zip",
     )
     sst_nc = unzip_first_nc(sst_zip, TMP / "sst")
     sst_ds = subset_latlon(xr.open_dataset(sst_nc), "lat", "lon")
@@ -185,9 +194,8 @@ def download_cds() -> dict:
     sst_ds[["analysed_sst"]].to_netcdf(sst_out)
 
     # 2) Clorofila Ocean Colour satélite
-    chl_zip = TMP / "chl_cds.zip"
-    print("CDS -> satellite-ocean-colour")
-    client.retrieve(
+    chl_zip = _retrieve_or_reuse(
+        client,
         "satellite-ocean-colour",
         {
             "variable": ["mass_concentration_of_chlorophyll_a"],
@@ -198,7 +206,7 @@ def download_cds() -> dict:
             "day": [DAY],
             "version": "6_0",
         },
-        str(chl_zip),
+        TMP / "chl_cds.zip",
     )
     chl_nc = unzip_first_nc(chl_zip, TMP / "chl")
     chl_ds = subset_latlon(xr.open_dataset(chl_nc), "lat", "lon")
@@ -206,9 +214,8 @@ def download_cds() -> dict:
     chl_ds[["chlor_a"]].to_netcdf(chl_out)
 
     # 3) Salinidad: en CDS no hay SSS satélite diaria; ORAS5 mensual (operacional)
-    sss_zip = TMP / "sss_cds.zip"
-    print("CDS -> reanalysis-oras5 (sea_surface_salinity, mensual)")
-    client.retrieve(
+    sss_zip = _retrieve_or_reuse(
+        client,
         "reanalysis-oras5",
         {
             "product_type": ["operational"],
@@ -217,7 +224,7 @@ def download_cds() -> dict:
             "year": [YEAR],
             "month": [MONTH],
         },
-        str(sss_zip),
+        TMP / "sss_cds.zip",
     )
     sss_nc = unzip_first_nc(sss_zip, TMP / "sss")
     sss_ds = subset_latlon(xr.open_dataset(sss_nc), "nav_lat", "nav_lon")
@@ -328,12 +335,19 @@ def download_erddap() -> dict:
 
 def load_field(cfg: dict) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     ds = xr.open_dataset(cfg["file"])
-    da = ds[cfg["var"]].squeeze(drop=True)
+    da = ds[cfg["var"]]
+    # Quitar solo ejes temporales de tamaño 1; conservar y/x aunque sean 1 (ORAS5 en bbox chico)
+    for dim in list(da.dims):
+        if "time" in dim and da.sizes[dim] == 1:
+            da = da.squeeze(dim, drop=True)
     if cfg.get("grid") == "curvilinear":
         lon = np.asarray(ds[cfg.get("lon", "nav_lon")].values)
         lat = np.asarray(ds[cfg.get("lat", "nav_lat")].values)
         data = np.asarray(da.values, dtype=float)
+        if data.ndim == 1:
+            data = data.reshape(lat.shape)
         return lon, lat, data
+    da = da.squeeze(drop=True)
     lon_name = next(c for c in ("longitude", "lon", "x") if c in da.coords or c in ds.coords)
     lat_name = next(c for c in ("latitude", "lat", "y") if c in da.coords or c in ds.coords)
     lon = np.asarray(ds[lon_name].values if lon_name in ds.coords else da[lon_name].values)
@@ -350,8 +364,8 @@ def add_basemap(ax) -> None:
     ax.add_feature(
         cfeature.BORDERS.with_scale("10m"), linewidth=0.5, edgecolor="#666666", linestyle="--", zorder=3
     )
-    ax.set_xticks(np.linspace(LON_W, LON_E, 6), crs=ccrs.PlateCarree())
-    ax.set_yticks(np.linspace(LAT_S, LAT_N, 6), crs=ccrs.PlateCarree())
+    ax.set_xticks(np.linspace(LON_W, LON_E, 5), crs=ccrs.PlateCarree())
+    ax.set_yticks(np.linspace(LAT_S, LAT_N, 5), crs=ccrs.PlateCarree())
     ax.tick_params(labelsize=8)
     ax.set_xlabel("Longitud", fontsize=9)
     ax.set_ylabel("Latitud", fontsize=9)
