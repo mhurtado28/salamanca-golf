@@ -11,20 +11,23 @@ Descarga de un día/mes de variables oceánicas desde el **Climate Data Store (C
 | Este   | -73.90° W |
 | Oeste  | -75.40° W |
 
-## Promedios mensuales 2025 (SST + clorofila)
+## Promedios mensuales desde diarios (SST + clorofila)
 
-Se descargan **todos los días de 2025** desde CDS, se conservan los recortes diarios del bbox y luego se calcula el **promedio mensual** (no se usan productos mensuales de CDS).
+Se descargan **todos los días** del año desde CDS, se conservan los recortes diarios del bbox y luego se calcula el **promedio mensual** (no se usan productos mensuales de CDS).
 
 ```bash
-python3 scripts/daily_to_monthly_sst_chl_2025.py
+python3 scripts/daily_to_monthly_sst_chl.py --year 2025
+python3 scripts/daily_to_monthly_sst_chl.py --year 2024
+# Solo regenerar mapas/promedios si ya están los diarios:
+python3 scripts/daily_to_monthly_sst_chl.py --year 2025 --plot-only
 ```
 
 | Variable | Dataset CDS diario | Salida |
 |----------|--------------------|--------|
-| SST | `satellite-sea-surface-temperature` L4 v3.0 | `data/daily_2025/sst_YYYY-MM-DD.nc` |
-| Clorofila-a | `satellite-ocean-colour` `chlor_a` v6.0 | `data/daily_2025/chl_YYYY-MM-DD.nc` |
-| Promedios | media aritmética de días disponibles | `data/monthly_from_daily_2025/` |
-| Mapas | solo SST y clorofila | `figures/monthly_2025/` |
+| SST | `satellite-sea-surface-temperature` L4 v3.0 | `data/daily_YYYY/sst_YYYY-MM-DD.nc` |
+| Clorofila-a | `satellite-ocean-colour` `chlor_a` v6.0 | `data/daily_YYYY/chl_YYYY-MM-DD.nc` |
+| Promedios | media aritmética de días disponibles | `data/monthly_from_daily_YYYY/` |
+| Mapas | solo SST y clorofila | `figures/monthly_YYYY/` |
 
 ## Prueba de un día (2023-07-20)
 
