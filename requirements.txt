@@ -4,3 +4,4 @@ matplotlib
 cartopy
 numpy
 requests
+copernicusmarine
