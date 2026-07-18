@@ -1,8 +1,8 @@
-# Ocean maps — SST, salinidad y clorofila (satélite / Ocean Color)
+# Ocean maps — Copernicus CDS (SST, salinidad, clorofila)
 
-Descarga de un día de variables oceánicas **satélite** sobre un bbox ampliado del Caribe colombiano, y mapas 2D con mapa base sencillo.
+Descarga de un día/mes de variables oceánicas desde el **Climate Data Store (CDS)** con `cdsapi`, recorte al bbox del Caribe colombiano y mapas 2D con mapa base sencillo.
 
-## Bbox ampliado
+## Bbox
 
 | Límite | Valor     |
 |--------|-----------|
@@ -11,42 +11,48 @@ Descarga de un día de variables oceánicas **satélite** sobre un bbox ampliado
 | Este   | -73.0° W  |
 | Oeste  | -76.5° W  |
 
-(Antes era ~0.3°×0.6°; ahora ~2.5°×3.5°.)
+## Fecha
 
-## Día usado
+**2023-07-20** (SST y clorofila diarias; salinidad ORAS5 = media de julio 2023)
 
-**2023-07-20**
+## Datasets CDS
 
-## Fuente por defecto (sin login): satélite + Ocean Color
+| Variable | Dataset CDS | Tipo |
+|----------|-------------|------|
+| SST | `satellite-sea-surface-temperature` (L4 combined, v3.0) | Satélite |
+| Clorofila-a | `satellite-ocean-colour` (`chlor_a`, v6.0, 4 km) | Ocean Colour satélite |
+| Salinidad | `reanalysis-oras5` (`sea_surface_salinity`, operacional) | Reanálisis mensual (CDS no ofrece SSS satélite diaria) |
 
-| Variable | Producto | Origen |
-|----------|----------|--------|
-| SST | JPL MUR L4 (~1 km) | GHRSST / ERDDAP `jplMURSST41` |
-| Salinidad | SMOS MIRAS daily (~0.25°) | satélite / ERDDAP `noaacwSMOSsssDaily` |
-| Clorofila-a | MODIS Aqua L3 4 km | **NASA Ocean Color** / ERDDAP `erdMH1chla1day_R2022NRT` |
+## Autenticación (no va en el repo)
+
+Opción A — GitHub Secrets del repositorio:
+
+- `CDS_URL` = `https://cds.climate.copernicus.eu/api`
+- `CDS_KEY` = token de https://cds.climate.copernicus.eu/profile
+
+Opción B — archivo local `~/.cdsapirc`:
+
+```text
+url: https://cds.climate.copernicus.eu/api
+key: <tu_token>
+```
+
+La primera vez hay que aceptar las licencias de cada dataset en la web CDS (el script intenta aceptarlas por API si faltan).
+
+## Cómo regenerar
 
 ```bash
 python3 -m pip install -r requirements.txt
+python3 scripts/download_and_map_ocean.py --source cds
+```
+
+Fallback público (sin CDS):
+
+```bash
 python3 scripts/download_and_map_ocean.py --source erddap
 ```
 
-## Copernicus Marine (opcional, satélite / Ocean Colour)
-
-Si quieres descargar desde Copernicus, define tus credenciales y corre:
-
-```bash
-export COPERNICUSMARINE_SERVICE_USERNAME="tu_usuario"
-export COPERNICUSMARINE_SERVICE_PASSWORD="tu_password"
-python3 scripts/download_and_map_ocean.py --source copernicus
-```
-
-Productos configurados (satélite / Ocean Colour, no reanálisis):
-
-- SST: `cmems_obs-sst_glo_phy_nrt_l4_P1D-m`
-- SSS: `cmems_obs-mob_glo_phy-sss_nrt_multiobs_0.25deg_P1D`
-- CHL: `cmems_obs-oc_glo_bgc-plankton_nrt_l3-multi-4km_P1D`
-
 ## Salidas
 
-- NetCDF: `data/`
+- NetCDF recortados: `data/*_cds_YYYY-MM-DD.nc`
 - Mapas: `figures/`

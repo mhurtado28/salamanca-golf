@@ -4,4 +4,4 @@ matplotlib
 cartopy
 numpy
 requests
-copernicusmarine
+cdsapi
