@@ -18,6 +18,7 @@ import calendar
 import os
 import re
 import shutil
+import time
 import zipfile
 from pathlib import Path
 
@@ -230,28 +231,40 @@ def download_month_daily(client: cdsapi.Client, kind: str, year: int, month: int
             }
 
         print(f"    bloque {bi}: días {chunk[0]}–{chunk[-1]}")
-        try:
-            if zip_path.exists():
-                zip_path.unlink()
-            client.retrieve(dataset, request, str(zip_path))
-            extract_dir.mkdir(parents=True, exist_ok=True)
-            with zipfile.ZipFile(zip_path) as zf:
-                zf.extractall(extract_dir)
-            for nc in sorted(extract_dir.rglob("*.nc")):
-                date = parse_date_from_name(nc.name, kind)
-                if not date:
-                    print(f"    aviso: no pude parsear fecha de {nc.name}")
-                    continue
-                out = save_daily_subset(nc, kind, date)
-                saved.append(out)
-                print(f"    guardado {out.name}")
-        except Exception as exc:
-            print(f"  FAIL {kind} {year}-{month:02d} bloque {bi}: {str(exc)[:500]}")
-        finally:
-            if zip_path.exists():
-                zip_path.unlink(missing_ok=True)
-            if extract_dir.exists():
-                shutil.rmtree(extract_dir, ignore_errors=True)
+        max_attempts = 4
+        for attempt in range(1, max_attempts + 1):
+            try:
+                if zip_path.exists():
+                    zip_path.unlink()
+                if extract_dir.exists():
+                    shutil.rmtree(extract_dir, ignore_errors=True)
+                client.retrieve(dataset, request, str(zip_path))
+                extract_dir.mkdir(parents=True, exist_ok=True)
+                with zipfile.ZipFile(zip_path) as zf:
+                    zf.extractall(extract_dir)
+                for nc in sorted(extract_dir.rglob("*.nc")):
+                    date = parse_date_from_name(nc.name, kind)
+                    if not date:
+                        print(f"    aviso: no pude parsear fecha de {nc.name}")
+                        continue
+                    out = save_daily_subset(nc, kind, date)
+                    saved.append(out)
+                    print(f"    guardado {out.name}")
+                break
+            except Exception as exc:
+                print(
+                    f"  FAIL {kind} {year}-{month:02d} bloque {bi} "
+                    f"(intento {attempt}/{max_attempts}): {str(exc)[:400]}"
+                )
+                if attempt < max_attempts:
+                    wait = 60 * attempt
+                    print(f"    reintento en {wait}s…")
+                    time.sleep(wait)
+            finally:
+                if zip_path.exists():
+                    zip_path.unlink(missing_ok=True)
+                if extract_dir.exists():
+                    shutil.rmtree(extract_dir, ignore_errors=True)
 
     uniq = {p.resolve(): p for p in saved}
     return sorted(uniq.values())
