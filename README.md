@@ -29,6 +29,18 @@ python3 scripts/daily_to_monthly_sst_chl.py --year 2025 --plot-only
 | Promedios | media aritmética de días disponibles | `data/monthly_from_daily_YYYY/` |
 | Mapas | solo SST y clorofila | `figures/monthly_YYYY/` |
 
+## Climatología mensual 2015–2025
+
+1. Descargar diarios faltantes (reanuda años ya hechos):
+```bash
+python3 scripts/run_years_daily_sst_chl.py --start 2015 --end 2025
+```
+2. Promedio de todos los eneros, febreros, …:
+```bash
+python3 scripts/climatology_monthly_sst_chl.py --start 2015 --end 2025
+```
+Salidas: `data/climatology_2015_2025/`, `figures/climatology_2015_2025/`.
+
 ## Prueba de un día (2023-07-20)
 
 | Variable | Dataset CDS | Tipo |
