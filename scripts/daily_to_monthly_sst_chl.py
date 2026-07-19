@@ -174,7 +174,12 @@ def save_daily_subset(nc_path: Path, kind: str, date: str) -> Path:
     return out
 
 
+def _chunks(items: list[str], size: int) -> list[list[str]]:
+    return [items[i : i + size] for i in range(0, len(items), size)]
+
+
 def download_month_daily(client: cdsapi.Client, kind: str, year: int, month: int) -> list[Path]:
+    """Descarga el mes en bloques (CHL en trozos pequeños para evitar timeouts ~1.5GB)."""
     days = days_in_month(year, month)
     saved: list[Path] = []
     missing = [d for d in days if not (DAILY / f"{kind}_{year}-{month:02d}-{d}.nc").exists()]
@@ -186,59 +191,67 @@ def download_month_daily(client: cdsapi.Client, kind: str, year: int, month: int
         print(f"  {kind} {year}-{month:02d}: ya completo ({len(saved)} días)")
         return saved
 
-    print(f"  {kind} {year}-{month:02d}: faltan {len(missing)}/{len(days)} días → CDS")
+    # SST ~15MB/día → bloques de 15 días; CHL ~45MB/día → bloques de 7 días
+    chunk_size = 15 if kind == "sst" else 7
+    print(
+        f"  {kind} {year}-{month:02d}: faltan {len(missing)}/{len(days)} días → CDS "
+        f"(bloques de {chunk_size})"
+    )
     TMP.mkdir(parents=True, exist_ok=True)
-    zip_path = TMP / f"{kind}_{year}{month:02d}.zip"
-    extract_dir = TMP / f"{kind}_{year}{month:02d}_nc"
-    if extract_dir.exists():
-        shutil.rmtree(extract_dir)
 
-    if kind == "sst":
-        dataset = "satellite-sea-surface-temperature"
-        request = {
-            "variable": "all",
-            "processinglevel": "level_4",
-            "sensor_on_satellite": "combined_product",
-            "version": "3_0",
-            "temporal_resolution": "daily",
-            "year": [str(year)],
-            "month": [f"{month:02d}"],
-            "day": missing,
-        }
-    else:
-        dataset = "satellite-ocean-colour"
-        request = {
-            "variable": ["mass_concentration_of_chlorophyll_a"],
-            "projection": "regular_latitude_longitude_grid",
-            "temporal_resolution": "daily",
-            "year": [str(year)],
-            "month": [f"{month:02d}"],
-            "day": missing,
-            "version": "6_0",
-        }
-
-    try:
-        if zip_path.exists():
-            zip_path.unlink()
-        client.retrieve(dataset, request, str(zip_path))
-        extract_dir.mkdir(parents=True, exist_ok=True)
-        with zipfile.ZipFile(zip_path) as zf:
-            zf.extractall(extract_dir)
-        for nc in sorted(extract_dir.rglob("*.nc")):
-            date = parse_date_from_name(nc.name, kind)
-            if not date:
-                print(f"    aviso: no pude parsear fecha de {nc.name}")
-                continue
-            out = save_daily_subset(nc, kind, date)
-            saved.append(out)
-            print(f"    guardado {out.name}")
-    except Exception as exc:
-        print(f"  FAIL {kind} {year}-{month:02d}: {str(exc)[:500]}")
-    finally:
-        if zip_path.exists():
-            zip_path.unlink(missing_ok=True)
+    for bi, chunk in enumerate(_chunks(missing, chunk_size), start=1):
+        zip_path = TMP / f"{kind}_{year}{month:02d}_p{bi}.zip"
+        extract_dir = TMP / f"{kind}_{year}{month:02d}_p{bi}_nc"
         if extract_dir.exists():
-            shutil.rmtree(extract_dir, ignore_errors=True)
+            shutil.rmtree(extract_dir)
+
+        if kind == "sst":
+            dataset = "satellite-sea-surface-temperature"
+            request = {
+                "variable": "all",
+                "processinglevel": "level_4",
+                "sensor_on_satellite": "combined_product",
+                "version": "3_0",
+                "temporal_resolution": "daily",
+                "year": [str(year)],
+                "month": [f"{month:02d}"],
+                "day": chunk,
+            }
+        else:
+            dataset = "satellite-ocean-colour"
+            request = {
+                "variable": ["mass_concentration_of_chlorophyll_a"],
+                "projection": "regular_latitude_longitude_grid",
+                "temporal_resolution": "daily",
+                "year": [str(year)],
+                "month": [f"{month:02d}"],
+                "day": chunk,
+                "version": "6_0",
+            }
+
+        print(f"    bloque {bi}: días {chunk[0]}–{chunk[-1]}")
+        try:
+            if zip_path.exists():
+                zip_path.unlink()
+            client.retrieve(dataset, request, str(zip_path))
+            extract_dir.mkdir(parents=True, exist_ok=True)
+            with zipfile.ZipFile(zip_path) as zf:
+                zf.extractall(extract_dir)
+            for nc in sorted(extract_dir.rglob("*.nc")):
+                date = parse_date_from_name(nc.name, kind)
+                if not date:
+                    print(f"    aviso: no pude parsear fecha de {nc.name}")
+                    continue
+                out = save_daily_subset(nc, kind, date)
+                saved.append(out)
+                print(f"    guardado {out.name}")
+        except Exception as exc:
+            print(f"  FAIL {kind} {year}-{month:02d} bloque {bi}: {str(exc)[:500]}")
+        finally:
+            if zip_path.exists():
+                zip_path.unlink(missing_ok=True)
+            if extract_dir.exists():
+                shutil.rmtree(extract_dir, ignore_errors=True)
 
     uniq = {p.resolve(): p for p in saved}
     return sorted(uniq.values())
