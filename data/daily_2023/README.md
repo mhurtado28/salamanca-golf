@@ -12,5 +12,3 @@ Bbox: 10.7,-75.4,11.6,-73.9
 - stacks: `sst_monthly_mean_2023.nc`, `chl_monthly_mean_2023.nc`
 
 Fuente: Copernicus CDS diarios (no productos mensuales).
-
-Nota: CHL 2023-05-28 no disponible en CDS (selección inválida).
