@@ -1,0 +1,11 @@
+# Credenciales CDS — nunca subir al repo
+.cdsapirc
+**/.cdsapirc
+.env
+.env.*
+
+# Caches / temporales
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+/tmp/

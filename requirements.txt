@@ -1,0 +1,7 @@
+xarray
+netCDF4
+matplotlib
+cartopy
+numpy
+requests
+cdsapi
