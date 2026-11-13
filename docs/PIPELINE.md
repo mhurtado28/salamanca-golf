@@ -76,3 +76,18 @@ Con `--process-only` (ríos y viento) se regeneran tablas y figuras sin descarga
   la costa O–E del golfo; para la costa N–S frente a Santa Marta sería 270° (oeste).
 - **TID de GEBCO**: si la mayoría del golfo es "indirecta/interpolada", la comparación
   con la carta COL 407 y con la Fig. 20 del paper pierde fuerza; dilo en métodos.
+
+## 6. Alternativa sin Codespace: GitHub Actions
+
+El workflow `.github/workflows/pipeline.yml` corre los mismos pasos en la nube de
+GitHub, sin mantener nada abierto, y sube los datos y figuras a la rama.
+
+1. **Settings → Secrets and variables → Actions → New repository secret**:
+   `CDS_KEY` = tu token de ECMWF.
+2. Acepta las licencias de ERA5 y GloFAS (sección 1).
+3. **Actions → "Pipeline ríos, lluvia, viento y batimetría" → Run workflow**,
+   elige la rama, los años y los pasos.
+
+Cada ejecución tiene un límite de ~6 h; si la cola de Copernicus no alcanza,
+vuelve a lanzarlo: los scripts retoman donde quedaron. Para IDEAM y GEBCO, sube
+primero los archivos a `data/ideam/raw/` y `data/bathymetry/raw/` en la rama.
