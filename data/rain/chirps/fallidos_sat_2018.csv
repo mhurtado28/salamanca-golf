@@ -1,0 +1,358 @@
+fecha,error
+2018-01-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 86 ms: Could not connect to server
+2018-01-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 88 ms: Could not connect to server
+2018-01-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 90 ms: Could not connect to server
+2018-01-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 90 ms: Could not connect to server
+2018-01-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 90 ms: Could not connect to server
+2018-01-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 91 ms: Could not connect to server
+2018-01-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 93 ms: Could not connect to server
+2018-01-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 92 ms: Could not connect to server
+2018-01-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-01-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-01-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-01-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-01-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-01-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-01-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-01-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-01-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-01-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-01-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-01-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-01-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-01-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 16 ms: Could not connect to server
+2018-01-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-01-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 16 ms: Could not connect to server
+2018-01-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-01-31,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-01-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-01-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-01-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-01-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-01-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 20 ms: Could not connect to server
+2018-02-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-02-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-02-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 10 ms: Could not connect to server
+2018-02-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-02-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-02-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-02-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-02-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-02-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-02-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-02-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-02-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-02-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-02-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-02-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 18 ms: Could not connect to server
+2018-02-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-02-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 18 ms: Could not connect to server
+2018-02-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-02-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-03-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-03-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-03-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-03-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-03-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-03-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-03-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-03-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-03-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-03-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-03-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-03-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-03-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-03-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-03-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-03-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-03-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-03-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-04-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-04-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-04-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-04-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-04-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-03-31,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 21 ms: Could not connect to server
+2018-04-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-04-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-04-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-04-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 10 ms: Could not connect to server
+2018-04-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-04-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 14 ms: Could not connect to server
+2018-04-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 16 ms: Could not connect to server
+2018-04-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-04-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 16 ms: Could not connect to server
+2018-04-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 17 ms: Could not connect to server
+2018-04-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-04-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-04-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 11 ms: Could not connect to server
+2018-04-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 13 ms: Could not connect to server
+2018-04-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-04-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-04-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 18 ms: Could not connect to server
+2018-04-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 15 ms: Could not connect to server
+2018-04-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 12 ms: Could not connect to server
+2018-05-03,chirps-v3.0.sat.2018.05.03.tif: TIFFReadDirectory:Failed to read directory at offset 14591618
+2018-05-05,'/vsicurl/https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/2018/chirps-v3.0.sat.2018.05.05.tif' not recogn
+2018-05-06,'/vsicurl/https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/2018/chirps-v3.0.sat.2018.05.06.tif' not recogn
+2018-05-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135171 ms: Could not connect to server
+2018-05-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135185 ms: Could not connect to server
+2018-05-07,'/vsicurl/https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/2018/chirps-v3.0.sat.2018.05.07.tif' not recogn
+2018-05-04,chirps-v3.0.sat.2018.05.04.tif: TIFFReadDirectory:Failed to read directory at offset 14536258
+2018-05-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135185 ms: Could not connect to server
+2018-05-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-05-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-05-31,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-05-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-06-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-06-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-06-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135167 ms: Could not connect to server
+2018-06-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-06-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135167 ms: Could not connect to server
+2018-06-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135167 ms: Could not connect to server
+2018-06-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-06-21,HTTP response code: 403
+2018-06-25,HTTP response code: 403
+2018-06-28,HTTP response code: 403
+2018-06-29,HTTP response code: 403
+2018-06-30,HTTP response code: 403
+2018-06-23,HTTP response code: 403
+2018-07-01,HTTP response code: 403
+2018-07-02,HTTP response code: 403
+2018-07-03,HTTP response code: 403
+2018-06-20,HTTP response code: 403
+2018-07-04,HTTP response code: 403
+2018-07-05,HTTP response code: 403
+2018-07-06,HTTP response code: 403
+2018-07-07,HTTP response code: 403
+2018-07-08,HTTP response code: 403
+2018-06-22,HTTP response code: 403
+2018-06-24,HTTP response code: 403
+2018-07-09,HTTP response code: 403
+2018-07-10,HTTP response code: 403
+2018-07-11,HTTP response code: 403
+2018-07-12,HTTP response code: 403
+2018-07-13,HTTP response code: 403
+2018-07-14,HTTP response code: 403
+2018-06-27,HTTP response code: 403
+2018-07-15,HTTP response code: 403
+2018-07-16,HTTP response code: 403
+2018-07-17,HTTP response code: 403
+2018-07-18,HTTP response code: 403
+2018-07-20,HTTP response code: 403
+2018-07-19,HTTP response code: 403
+2018-07-21,HTTP response code: 403
+2018-07-22,HTTP response code: 403
+2018-07-23,HTTP response code: 403
+2018-07-25,HTTP response code: 403
+2018-07-24,HTTP response code: 403
+2018-07-26,HTTP response code: 403
+2018-07-27,HTTP response code: 403
+2018-07-28,HTTP response code: 403
+2018-07-29,HTTP response code: 403
+2018-07-30,HTTP response code: 403
+2018-07-31,HTTP response code: 403
+2018-08-01,HTTP response code: 403
+2018-08-02,HTTP response code: 403
+2018-08-05,HTTP response code: 403
+2018-06-26,HTTP response code: 403
+2018-08-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134665 ms: Could not connect to server
+2018-08-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134634 ms: Could not connect to server
+2018-08-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134671 ms: Could not connect to server
+2018-08-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134664 ms: Could not connect to server
+2018-08-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134666 ms: Could not connect to server
+2018-08-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134673 ms: Could not connect to server
+2018-08-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134657 ms: Could not connect to server
+2018-08-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 134661 ms: Could not connect to server
+2018-08-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-08-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-08-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-08-31,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-08-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-09-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-09-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135167 ms: Could not connect to server
+2018-09-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-09-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135167 ms: Could not connect to server
+2018-09-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-09-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135163 ms: Could not connect to server
+2018-09-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-09-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-09-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-10-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-10-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-10-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-10-31,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-11-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-01,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-11-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-08,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-09,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-02,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-07,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-05,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-04,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-06,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-03,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-14,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-11,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-12-15,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-16,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-10,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-17,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-12,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135166 ms: Could not connect to server
+2018-12-13,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-20,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-24,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-25,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-18,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-21,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-22,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-19,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-23,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-30,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-28,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-27,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-31,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135164 ms: Could not connect to server
+2018-12-29,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
+2018-12-26,CURL error: Failed to connect to data.chc.ucsb.edu port 443 after 135165 ms: Could not connect to server
