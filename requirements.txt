@@ -3,5 +3,9 @@ netCDF4
 matplotlib
 cartopy
 numpy
+pandas
 requests
 cdsapi
+rasterio
+pyyaml
+openpyxl

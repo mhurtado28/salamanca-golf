@@ -82,3 +82,9 @@ python3 scripts/download_and_map_ocean.py --source erddap
 
 - NetCDF recortados: `data/*_cds_YYYY-MM-DD.nc`
 - Mapas: `figures/`
+
+## Pipeline en Codespace: ríos, lluvia, viento y batimetría
+
+Caudales (GloFAS v4 + IDEAM), lluvias (CHIRPS v3 + estaciones IDEAM), viento e índice
+de surgencia (ERA5) y batimetría (GEBCO_2025 + TID). Instrucciones completas en
+[`docs/PIPELINE.md`](docs/PIPELINE.md). Atajo: `bash scripts/run_pipeline.sh 2015 2025`.
