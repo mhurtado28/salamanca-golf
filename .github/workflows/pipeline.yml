@@ -45,6 +45,15 @@ jobs:
       - name: Instalar dependencias
         run: python -m pip install -r requirements.txt
 
+      - name: Revisar token de Copernicus
+        if: contains(inputs.pasos, 'rios') || contains(inputs.pasos, 'viento')
+        run: |
+          if [ -z "${CDS_KEY}" ]; then
+            echo "::error::Falta el secreto CDS_KEY (Settings → Secrets and variables → Actions). Ríos y viento no se pueden descargar."
+          else
+            echo "CDS_KEY presente."
+          fi
+
       - name: Ríos (GloFAS)
         if: contains(inputs.pasos, 'rios')
         continue-on-error: true
@@ -57,11 +66,17 @@ jobs:
         working-directory: scripts
         run: python wind_era5.py --start ${{ inputs.start }} --end ${{ inputs.end }}
 
-      - name: Lluvia (CHIRPS v3)
+      - name: Lluvia (CHIRPS v3) — guarda tras cada año
         if: contains(inputs.pasos, 'lluvia')
         continue-on-error: true
+        timeout-minutes: 300
         working-directory: scripts
-        run: python rain_chirps_download.py --start ${{ inputs.start }} --end ${{ inputs.end }}
+        run: |
+          for y in $(seq ${{ inputs.start }} ${{ inputs.end }}); do
+            python rain_chirps_download.py --start $y --end $y; rc=$?
+            bash ci_save.sh "CHIRPS v3 $y"
+            if [ $rc -ne 0 ]; then echo "CHIRPS no responde; se retoma en la próxima ejecución."; exit 1; fi
+          done
 
       - name: IDEAM (si hay CSV en data/ideam/raw)
         if: contains(inputs.pasos, 'ideam') && hashFiles('data/ideam/raw/*') != ''
@@ -86,15 +101,4 @@ jobs:
       - name: Guardar resultados en la rama
         if: always()
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add data figures || true
-          if git diff --cached --quiet; then
-            echo "Sin cambios que guardar."
-            exit 0
-          fi
-          git commit -m "Datos y figuras del pipeline (${{ inputs.start }}–${{ inputs.end }}: ${{ inputs.pasos }})"
-          for i in 1 2 3; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
-            sleep 10
-          done
+          bash scripts/ci_save.sh "Datos y figuras del pipeline (${{ inputs.start }}–${{ inputs.end }}: ${{ inputs.pasos }})"
