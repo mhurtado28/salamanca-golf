@@ -1,0 +1,68 @@
+# Configuración común del pipeline (ríos, lluvia, viento, batimetría).
+# Las coordenadas marcadas "VERIFICAR" son aproximadas: revísalas en el mapa
+# de control que genera cada script antes de usar los resultados en el paper.
+
+periodo:
+  inicio: 2015
+  fin: 2025
+  # Para comparar con el paper (campañas 1996–1998) corre los scripts con
+  # --start 1995 --end 1998 además del periodo principal.
+
+golfo:              # caja del Golfo de Salamanca (García et al.)
+  lat_s: 11.00
+  lat_n: 11.35
+  lon_w: -74.90
+  lon_e: -74.15
+
+# Ríos: GloFAS v4 (0.05°). En una caja pequeña alrededor del punto se elige
+# la celda con mayor caudal medio (= el cauce principal en la grilla).
+rios:
+  magdalena_calamar:
+    nombre: "Magdalena (Calamar)"
+    lat: 10.25
+    lon: -74.92
+    caja: 0.10
+    nota: "Mismo sitio que la estación IDEAM de Calamar: sirve para validar GloFAS."
+  magdalena_desembocadura:
+    nombre: "Magdalena (Bocas de Ceniza)"
+    lat: 11.07
+    lon: -74.85
+    caja: 0.10
+  toribio:
+    nombre: "Río Toribio"
+    lat: 11.10      # VERIFICAR
+    lon: -74.22     # VERIFICAR
+    caja: 0.06
+    nota: "Cuenca pequeña: GloFAS a 0.05° la representa mal. Usar como indicador."
+  cordoba:
+    nombre: "Río Córdoba"
+    lat: 11.05      # VERIFICAR
+    lon: -74.23     # VERIFICAR
+    caja: 0.06
+    nota: "Cuenca pequeña: GloFAS a 0.05° la representa mal. Usar como indicador."
+
+# Lluvia: CHIRPS v3 diario (solo continente) + estaciones IDEAM (DHIME).
+chirps:
+  producto: sat        # 'sat' (IMERG) o 'rnl' (ERA5) para repartir pentadas en días
+  lat_s: 10.15
+  lat_n: 11.60
+  lon_w: -75.40
+  lon_e: -73.50
+  # Índices de aporte por cuenca (cajas aproximadas; reemplazar por polígonos
+  # de HydroSHEDS cuando estén disponibles).
+  cuencas:
+    toribio:     {lat_s: 11.02, lat_n: 11.20, lon_w: -74.22, lon_e: -74.02}  # VERIFICAR
+    cordoba:     {lat_s: 10.95, lat_n: 11.08, lon_w: -74.23, lon_e: -73.98}  # VERIFICAR
+    sierra_cgsm: {lat_s: 10.40, lat_n: 10.95, lon_w: -74.20, lon_e: -73.70}  # Aracataca/Fundación/Sevilla
+    costa_golfo: {lat_s: 10.85, lat_n: 11.30, lon_w: -74.95, lon_e: -74.15}
+
+# Viento: ERA5 horario → diario, índice de surgencia de Ekman.
+viento:
+  lat_s: 10.75
+  lat_n: 11.75
+  lon_w: -75.25
+  lon_e: -73.75
+  # Dirección mar afuera (grados desde el norte, sentido horario).
+  # Costa del golfo ~ O–E → mar afuera = norte (0°).
+  offshore_deg: 0
+  punto_indice: {lat: 11.25, lon: -74.50}

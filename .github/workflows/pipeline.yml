@@ -1,0 +1,100 @@
+name: Pipeline ríos, lluvia, viento y batimetría
+
+# Se lanza a mano desde la pestaña Actions → "Run workflow".
+# Requiere el secreto del repo CDS_KEY (token de ECMWF) y las licencias de
+# ERA5 y GloFAS aceptadas en Copernicus. Los resultados se suben a la rama
+# desde la que se lanza. Los scripts son reanudables: si un paso no termina
+# (límite de 6 h por job), vuelve a lanzarlo y sigue donde quedó.
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Año inicial"
+        default: "2015"
+      end:
+        description: "Año final"
+        default: "2025"
+      pasos:
+        description: "Pasos a correr (separados por espacio): rios viento lluvia ideam batimetria"
+        default: "rios viento lluvia ideam batimetria"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      CDS_KEY: ${{ secrets.CDS_KEY }}
+      CDS_URL: https://cds.climate.copernicus.eu/api
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      - name: Ríos (GloFAS)
+        if: contains(inputs.pasos, 'rios')
+        continue-on-error: true
+        working-directory: scripts
+        run: python rivers_glofas.py --start ${{ inputs.start }} --end ${{ inputs.end }}
+
+      - name: Viento (ERA5)
+        if: contains(inputs.pasos, 'viento')
+        continue-on-error: true
+        working-directory: scripts
+        run: python wind_era5.py --start ${{ inputs.start }} --end ${{ inputs.end }}
+
+      - name: Lluvia (CHIRPS v3)
+        if: contains(inputs.pasos, 'lluvia')
+        continue-on-error: true
+        working-directory: scripts
+        run: python rain_chirps_download.py --start ${{ inputs.start }} --end ${{ inputs.end }}
+
+      - name: IDEAM (si hay CSV en data/ideam/raw)
+        if: contains(inputs.pasos, 'ideam') && hashFiles('data/ideam/raw/*') != ''
+        continue-on-error: true
+        working-directory: scripts
+        run: |
+          python ideam_dhime.py
+          if [ -d ../data/rivers/glofas_raw ]; then python rivers_glofas.py --process-only; fi
+
+      - name: Análisis de lluvia
+        if: contains(inputs.pasos, 'lluvia')
+        continue-on-error: true
+        working-directory: scripts
+        run: python rain_analysis.py --start ${{ inputs.start }} --end ${{ inputs.end }}
+
+      - name: Batimetría (si hay GEBCO en data/bathymetry/raw)
+        if: contains(inputs.pasos, 'batimetria') && hashFiles('data/bathymetry/raw/**/*.nc') != ''
+        continue-on-error: true
+        working-directory: scripts
+        run: python bathymetry_gebco.py
+
+      - name: Guardar resultados en la rama
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data figures || true
+          if git diff --cached --quiet; then
+            echo "Sin cambios que guardar."
+            exit 0
+          fi
+          git commit -m "Datos y figuras del pipeline (${{ inputs.start }}–${{ inputs.end }}: ${{ inputs.pasos }})"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep 10
+          done
