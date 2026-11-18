@@ -22,7 +22,8 @@ las descargas no pasan por tu PC. Los pulsos fríos de TSM se tratan aparte
 | Dato | Fuente | Cómo llega | Script |
 |---|---|---|---|
 | Caudal Magdalena, Toribio, Córdoba | GloFAS v4 (0.05°, diario) | automático (EWDS) | `rivers_glofas.py` |
-| Viento 10 m → índice de surgencia | ERA5 horario | automático (CDS) | `wind_era5.py` |
+| Viento 10 m (`u10`, `v10`) | ERA5 horario (CDS) | automático (descarga) | `wind_era5.py` |
+| Índice de surgencia (UI de Ekman) | Calculado desde el viento ERA5 (no es un producto aparte en CDS) | automático (derivado) | `wind_era5.py` |
 | Lluvia diaria | CHIRPS v3 (0.05°, solo tierra) | automático (CHC) | `rain_chirps_download.py` |
 | Estaciones lluvia + caudal Calamar | IDEAM DHIME | **manual** → `data/ideam/raw/` | `ideam_dhime.py` |
 | Batimetría + origen del dato | GEBCO_2025 + TID | **manual** → `data/bathymetry/raw/` | `bathymetry_gebco.py` |

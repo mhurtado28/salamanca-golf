@@ -85,6 +85,7 @@ python3 scripts/download_and_map_ocean.py --source erddap
 
 ## Pipeline en Codespace: ríos, lluvia, viento y batimetría
 
-Caudales (GloFAS v4 + IDEAM), lluvias (CHIRPS v3 + estaciones IDEAM), viento e índice
-de surgencia (ERA5) y batimetría (GEBCO_2025 + TID). Instrucciones completas en
+Caudales (GloFAS v4 + IDEAM), lluvias (CHIRPS v3 + estaciones IDEAM), viento ERA5
+(descarga) e índice de surgencia de Ekman (calculado a partir de ese viento; no
+es un dataset aparte) y batimetría (GEBCO_2025 + TID). Instrucciones completas en
 [`docs/PIPELINE.md`](docs/PIPELINE.md). Atajo: `bash scripts/run_pipeline.sh 2015 2025`.
